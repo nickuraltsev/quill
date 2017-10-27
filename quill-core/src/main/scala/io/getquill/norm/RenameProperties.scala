@@ -1,6 +1,7 @@
 package io.getquill.norm
 
 import io.getquill.ast._
+import io.getquill.ast.BetaReduction
 
 object RenameProperties extends StatelessTransformer {
 

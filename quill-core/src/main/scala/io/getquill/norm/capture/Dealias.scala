@@ -1,7 +1,7 @@
 package io.getquill.norm.capture
 
 import io.getquill.ast._
-import io.getquill.norm.BetaReduction
+import io.getquill.ast.BetaReduction
 
 case class Dealias(state: Option[Ident]) extends StatefulTransformer[Option[Ident]] {
 

@@ -9,9 +9,10 @@ enablePlugins(TutPlugin)
 lazy val scalaVersionProperty = Option(System.getProperty("scalaVersion"))
 
 lazy val modules = Seq[sbt.ClasspathDep[sbt.ProjectReference]](
-  `quill-core-jvm`, `quill-core-js`, `quill-sql-jvm`, `quill-sql-js`,
-  `quill-jdbc`, `quill-finagle-mysql`, `quill-finagle-postgres`, `quill-async`,
-  `quill-async-mysql`, `quill-async-postgres`, `quill-cassandra`, `quill-orientdb`
+  `quill-quotation-jvm`, `quill-quotation-js`, `quill-core-jvm`, `quill-core-js`, 
+  `quill-sql-jvm`, `quill-sql-js`, `quill-jdbc`, `quill-finagle-mysql`,
+  `quill-finagle-postgres`, `quill-async`, `quill-async-mysql`, `quill-async-postgres`,
+  `quill-cassandra`, `quill-orientdb`
 ) ++ 
   Seq[sbt.ClasspathDep[sbt.ProjectReference]](`quill-spark`)
     .filter(_ => scalaVersionProperty.map(_.startsWith("2.11")).getOrElse(true))
@@ -34,6 +35,17 @@ lazy val superPure = new org.scalajs.sbtplugin.cross.CrossType {
     Some(projectBase.getParentFile / "src" / conf / "scala")
 }
 
+lazy val `quill-quotation` =
+  crossProject.crossType(superPure)
+    .settings(commonSettings: _*)
+    .settings(mimaSettings: _*)
+    .jsSettings(
+      coverageExcludedPackages := ".*"
+    )
+
+lazy val `quill-quotation-jvm` = `quill-quotation`.jvm
+lazy val `quill-quotation-js` = `quill-quotation`.js
+
 lazy val `quill-core` =
   crossProject.crossType(superPure)
     .settings(commonSettings: _*)
@@ -47,6 +59,7 @@ lazy val `quill-core` =
       libraryDependencies += "org.scala-js" %%% "scalajs-java-time" % "0.2.2",
       coverageExcludedPackages := ".*"
     )
+    .dependsOn(`quill-quotation`)
 
 lazy val `quill-core-jvm` = `quill-core`.jvm
 lazy val `quill-core-js` = `quill-core`.js

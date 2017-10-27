@@ -1,6 +1,4 @@
-package io.getquill.norm
-
-import io.getquill.ast._
+package io.getquill.ast
 
 case class BetaReduction(map: collection.Map[Ast, Ast])
   extends StatelessTransformer {

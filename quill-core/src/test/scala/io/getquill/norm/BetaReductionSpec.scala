@@ -2,6 +2,7 @@ package io.getquill.norm
 
 import io.getquill.Spec
 import io.getquill.ast._
+import io.getquill.ast.BetaReduction
 
 class BetaReductionSpec extends Spec {
 

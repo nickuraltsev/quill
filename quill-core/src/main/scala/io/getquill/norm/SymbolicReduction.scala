@@ -5,6 +5,7 @@ import io.getquill.ast.FlatMap
 import io.getquill.ast.Query
 import io.getquill.ast.Union
 import io.getquill.ast.UnionAll
+import io.getquill.ast.BetaReduction
 
 object SymbolicReduction {
 

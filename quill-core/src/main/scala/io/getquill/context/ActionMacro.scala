@@ -4,7 +4,7 @@ import scala.reflect.macros.whitebox.{ Context => MacroContext }
 import io.getquill.ast._
 import io.getquill.quotation.ReifyLiftings
 import io.getquill.util.Messages._
-import io.getquill.norm.BetaReduction
+import io.getquill.ast.BetaReduction
 import io.getquill.util.EnableReflectiveCalls
 
 class ActionMacro(val c: MacroContext)
