@@ -10,7 +10,7 @@ import io.getquill.ast.Map
 import io.getquill.ast.Query
 import io.getquill.ast.SortBy
 import io.getquill.ast.StatefulTransformer
-import io.getquill.ast.BetaReduction
+import io.getquill.norm.BetaReduction
 import io.getquill.ast.FlatJoin
 import io.getquill.ast.GroupBy
 

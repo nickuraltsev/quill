@@ -5,7 +5,6 @@ import io.getquill.ast.Query
 import io.getquill.ast.StatelessTransformer
 import io.getquill.norm.capture.AvoidCapture
 import io.getquill.ast.Action
-import io.getquill.ast.BetaReduction
 
 import scala.annotation.tailrec
 

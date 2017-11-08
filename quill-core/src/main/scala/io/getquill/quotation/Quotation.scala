@@ -6,7 +6,7 @@ import scala.reflect.macros.whitebox.Context
 
 import io.getquill.ast._
 import io.getquill.util.Messages.RichContext
-import io.getquill.ast.BetaReduction
+import io.getquill.norm.BetaReduction
 import io.getquill.util.EnableReflectiveCalls
 
 case class QuotedAst(ast: Ast) extends StaticAnnotation

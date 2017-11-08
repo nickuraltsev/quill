@@ -39,6 +39,9 @@ lazy val `quill-quotation` =
   crossProject.crossType(superPure)
     .settings(commonSettings: _*)
     .settings(mimaSettings: _*)
+    .settings(libraryDependencies ++= Seq(
+      "org.scala-lang"             %  "scala-reflect" % scalaVersion.value
+    ))
     .jsSettings(
       coverageExcludedPackages := ".*"
     )
@@ -52,8 +55,7 @@ lazy val `quill-core` =
     .settings(mimaSettings: _*)
     .settings(libraryDependencies ++= Seq(
       "com.typesafe"               %  "config"        % "1.3.2",
-      "com.typesafe.scala-logging" %% "scala-logging" % "3.7.2",
-      "org.scala-lang"             %  "scala-reflect" % scalaVersion.value
+      "com.typesafe.scala-logging" %% "scala-logging" % "3.7.2"
     ))
     .jsSettings(
       libraryDependencies += "org.scala-js" %%% "scalajs-java-time" % "0.2.2",

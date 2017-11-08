@@ -4,7 +4,7 @@ import io.getquill.ast._
 import scala.reflect.macros.whitebox.{ Context => MacroContext }
 import scala.reflect.NameTransformer
 import io.getquill.dsl.EncodingDsl
-import io.getquill.ast.BetaReduction
+import io.getquill.norm.BetaReduction
 import io.getquill.util.OptionalTypecheck
 import io.getquill.util.Messages._
 
